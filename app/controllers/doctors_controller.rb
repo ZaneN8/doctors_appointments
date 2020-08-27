@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-  before_action :set_doctor, only: [:show, :new, :destroy]
+  before_action :set_doctor, only: [:show, :destroy]
 
   def index
     @doctors = Doctor.all
@@ -14,6 +14,7 @@ class DoctorsController < ApplicationController
   end
 
   def create
+    @doctor = Doctor.new(doctor_params)
     if @doctor.save
       redirect_to doctors_path
     else
@@ -33,6 +34,6 @@ class DoctorsController < ApplicationController
   end
 
   def doctor_params
-    params.require(:doctor).permit(params[:first_name, :last_name])
+    params.require(:doctor).permit(:first_name, :last_name)
   end
 end

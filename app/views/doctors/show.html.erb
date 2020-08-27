@@ -1,2 +1,8 @@
 <h1><%= @doctor.full_name%></h1>
-<p>Find me in app/views/doctors/show.html.erb</p>
+<hr />
+<%= link_to "Appointments", doctor_appointments_path(@doctor), class: "ui blue button inverted"%>
+<br />
+<%= link_to "Back to all Doctors", doctors_path, class: "ui blue button inverted" %>
+
+<br />
+<%= link_to "Remove Doctor", doctor_path, method: :delete, class: "ui red button inverted"  %>
