@@ -24,7 +24,7 @@ require "faker"
     2.times do
       Appointment.create(
         time: Faker::Date.between(from: '2020-09-23', to: '2020-12-31'),
-        doctor_id: doctor.id,
+        doctor_id: doctor.id.
         user_id: user.id
       )
     end

@@ -1,2 +1,16 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.full_name%></h1>
+<hr />
+
+<ul>
+  <% @user.doctors.each do |doctor| %>
+    <li>
+      <%= link_to doctor.full_name, doctor %>
+    </li>
+  <% end %>
+</ul>
+
+<br />
+<%= link_to "Back to main menu", users_path, class: "ui blue button inverted" %>
+
+<br />
+<%= link_to "Delete", user_path, method: :delete, class: "ui red button inverted"  %>

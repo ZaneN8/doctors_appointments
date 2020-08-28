@@ -1,5 +1,4 @@
 <h1>Patients</h1>
-<%= link_to 'New User', new_user_path %> <%# fix user name%>
 <hr />
 <ul>
   <% @users.each do |user| %>
@@ -8,3 +7,5 @@
     </li>
 <% end %>
 </ul>
+<br />
+<%= link_to 'New Patient', new_user_path %> <%# fix user name%>
