@@ -20,18 +20,20 @@ class AppointmentsController < ApplicationController
     else
       render :new   
     end
+  end
 
     def destroy
       @appointment = @doctor.appointments.find(params[:id])
       @appointment.destroy
       redirect_to doctor_appointments_path(@doctor)
     end
-  end
+  
 
   private
 
   def set_doctor
     @doctor = Doctor.find(params[:doctor_id])
+
   end
 
   def appointment_params

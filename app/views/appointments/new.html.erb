@@ -1,2 +1,12 @@
-<h1>Appointments#new</h1>
-<p>Find me in app/views/appointments/new.html.erb</p>
+<h1>New Appointment</h1>
+<hr />
+
+<%= form_with(model: [@doctor, @appointment]) do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, required: true, autofocus: true, placeholder: "First Name" %>
+  <br />
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, required: true, autofocus: true, placeholder: "Last Name" %>
+
+  <%= f.submit nil, class: "ui blue button inverted" %>
+<% end %>
